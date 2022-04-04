@@ -1,5 +1,5 @@
 <p align="center">
-   Backend Repo > https://github.com/KleberBarilli/PinPlaces
+   Backend Repo > https://github.com/KleberBarilli/OnPlaces
 </p>
 
 
