@@ -64,3 +64,8 @@ form button{
 	color: #000;
 	cursor: pointer;
 }
+
+.github{
+	font-weight: bold;
+	font-size:20px;
+}
