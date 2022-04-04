@@ -100,7 +100,7 @@ function Profile() {
 				</Title>
 
 				<div className="container">
-					<form className="form-profile" onSubmit={handleSave}>
+					<form className="form-profile">
 						<label
 							className="label-avatar
 						"
@@ -141,7 +141,7 @@ function Profile() {
 						<label>Email</label>
 						<input type="text" value={email} disabled="true" />
 
-						<button type="submit">Salvar</button>
+						<button type="button" onClick={handleSave}>Salvar</button>
 					</form>
 				</div>
 				<div className="container">
