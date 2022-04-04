@@ -40,13 +40,14 @@ function Profile() {
 	async function handleUpload() {
 		const formData = new FormData();
 		formData.append('image', imageAvatar, imageAvatar.name);
-		console.log(formData)
+		//console.log(formData)
 		api.patch(`/useravatar/${user.id}`, formData, {
 			headers: {
 				Authorization: `Bearer ${user.token}`,
 			},
 		})
 			.then(res => {
+				console.log(res)
 				user.avatarUrl = res.data.avatar
 				console.log(user.avatarUrl);
 				alert('Foto alterada com sucesso')
