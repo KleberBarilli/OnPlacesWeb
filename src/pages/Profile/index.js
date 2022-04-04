@@ -23,6 +23,7 @@ function Profile() {
 	useEffect(() => {}, [avatarUrl])
 
 	function handleFile(e) {
+		console.log(e.target.files[0])
 		if (e.target.files[0]) {
 			const image = e.target.files[0];
 
@@ -39,6 +40,7 @@ function Profile() {
 	async function handleUpload() {
 		const formData = new FormData();
 		formData.append('image', imageAvatar, imageAvatar.name);
+		console.log(formData)
 		api.patch(`/useravatar/${user.id}`, formData, {
 			headers: {
 				Authorization: `Bearer ${user.token}`,
