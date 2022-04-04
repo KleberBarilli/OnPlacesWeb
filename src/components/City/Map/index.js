@@ -15,7 +15,7 @@ import { easeCubic } from 'd3-ease';
 
 
 const TOKEN =
-	'pk.eyJ1Ijoia2xlYmVyYmFyaWxsaSIsImEiOiJja3VxZ21jdHkyejl6MnhteDR3cG1mYjZrIn0.Z6c4fw4TNyZ8rpG4Z5wxsQ'; // Set your mapbox token here
+	process.env.REACT_APP_MAPBOX_TOKEN // Set your mapbox token here
 
 const geolocateStyle = {
 	top: 0,
