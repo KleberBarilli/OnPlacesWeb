@@ -46,6 +46,7 @@ function Profile() {
 		})
 			.then(res => {
 				user.avatarUrl = res.data.avatar
+				console.log(user.avatarUrl);
 				alert('Foto alterada com sucesso')
 				history.push('/dashboard')
 			})
