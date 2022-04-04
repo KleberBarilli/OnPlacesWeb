@@ -16,7 +16,7 @@ function CityInfo(props) {
         </a>
       </div>
 
-      <img width={250} src={`https://api-places.s3.amazonaws.com/${info.image}`} alt="img-city" />
+      <img width={250} src={`${process.env.REACT_APP_S3_URL}/${info.image}`} alt="img-city" />
     </div>
   );
 }

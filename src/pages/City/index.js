@@ -96,7 +96,7 @@ function City() {
 					<img
 						className="city-image"
 						alt="img-city"
-						src={`${process.env.REACT_APP_S3_URL}${imageCity}`}
+						src={`${process.env.REACT_APP_S3_URL}/${imageCity}`}
 					></img>
 				</div>
 
