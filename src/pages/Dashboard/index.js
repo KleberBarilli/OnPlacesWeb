@@ -61,7 +61,7 @@ export default function Dashboard() {
 
 	  useEffect(()=>{
 
-		api.get(`http://localhost:3333/city/all`)
+		api.get(`${process.env.REACT_APP_API_URL}/city/all`)
 		.then((res)=>{
 		  setCities(res.data)
 		  console.log(res.data)
