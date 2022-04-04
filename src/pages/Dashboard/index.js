@@ -19,7 +19,7 @@ import Title from '../../components/Title';
 import api from '../../services/api';
 
 
-const TOKEN = 'pk.eyJ1Ijoia2xlYmVyYmFyaWxsaSIsImEiOiJja3VxZ21jdHkyejl6MnhteDR3cG1mYjZrIn0.Z6c4fw4TNyZ8rpG4Z5wxsQ'; // Set your mapbox token here
+const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const geolocateStyle = {
   top: 0,

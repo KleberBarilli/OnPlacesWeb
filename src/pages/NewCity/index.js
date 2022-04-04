@@ -94,7 +94,8 @@ function NewCity() {
 				'Authorization': `Bearer ${user.token}`
 			}
 		}).then((res)=>{
-			history.push('/cities')
+			console.log(res)
+			//history.push('/cities')
 		}).catch((err)=>{
 			console.log(err)
 			toast.error('Houve um erro ao enviar, confira os campos')
