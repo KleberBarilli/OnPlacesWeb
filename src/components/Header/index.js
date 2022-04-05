@@ -21,8 +21,8 @@ function Header() {
 	  <div className="sidebar">
 		  <div>
 		  	<img src={user.avatarUrl === null || undefined ? avatar : `${process.env.REACT_APP_S3_URL}/${user.avatarUrl}` } 
-			  alt="Foto avatar" /><span className="welcome">Welcome {user.name}</span>
-			  
+			  alt="Foto avatar" /><span className="welcome">{user.name}</span>
+
 		  </div>
 		  <Link to="/dashboard">
 		  	<FiHome color="#FFF" size={24} />

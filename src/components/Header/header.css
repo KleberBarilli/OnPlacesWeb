@@ -16,7 +16,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 150px;
+	height: 200px;
 	padding-top: 30px;
 
 }
@@ -61,11 +61,13 @@
 }
 
 .welcome{
+
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	color: #fff;
+	margin-top:20px;
 	font-weight: bold;
-	margin-top: 5px;
 	font-family: 'Architects Daughte', cursive;
 	font-size: 14pt;
 
