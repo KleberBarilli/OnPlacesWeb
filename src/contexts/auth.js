@@ -9,7 +9,7 @@ function AuthProvider({children}){
 	const [user, setUser] = useState();
 	const [loadingAuth, setLoadingAuth] = useState(false);
 	const [loading, setLoading] = useState(true);
-
+	
 	useEffect(()=>{
 
 		function loadStorage(){
@@ -57,6 +57,10 @@ function AuthProvider({children}){
         })
     };
 
+	function timeout(delay) {
+		return new Promise( res => setTimeout(res, delay) );
+	}
+
 	async function signUp(name, email, password){
 
 		await api.post('/users', {name:name, email:email, password:password},
@@ -64,16 +68,9 @@ function AuthProvider({children}){
 		)
 			.then((res) => {
 				console.log(res.data)
-
-				let data = {
-					id: res.data.id,
-					name: res.data.name,
-					email: res.data.email
-				};
-				setUser(data)
-				storageUser(data);
-				toast.success('Bem vindo a plataforma')
-				setLoadingAuth(false);
+				alert('Conta criada com sucesso')
+				window.location.replace('/')
+				
 
 			})
 			.catch((err) => {
