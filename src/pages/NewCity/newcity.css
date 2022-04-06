@@ -15,6 +15,16 @@ input, select, textarea{
 	border: 1px solid rgb(214, 216, 218);
 	border-radius: 6px
 }
+.container-city{
+	display: flex;
+	background-color: #e7eaf8;;
+	border-radius: 5px;
+	padding: .8em;
+	align-items: center;
+	margin-bottom: 1em;
+	background: url("../../assets/ciity.jpg") no-repeat scroll 0 0 / cover;
+}
+
 
 #tags {
 	display: flex;
@@ -69,7 +79,7 @@ input, select, textarea{
 	display: flex;
 	flex-wrap: wrap;
 	min-height: 30px;
-	border: 1px solid gray;
+	border: 1px solid rgb(153, 78, 78);
 	border-radius: 5px;
 	padding: 10px;
 }
@@ -145,7 +155,7 @@ input, select, textarea{
 }
 
 .foto-cidade {
-	height: 100px;
+	height: 1px;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -168,15 +178,23 @@ input, select, textarea{
 	text-align: center;
 	margin: auto;
 	display: flex;
-	width: 60%;
+	width: 40%;
 	height: 40;
 	justify-content: center;
 	align-items: center;
-	background-color: #038c27;
+	background-color: #0052cc;
 
+	
 }
+
+@media screen and (max-width: 600px) {
+	.btn-save-city{
+		width:90%
+	}
+}
+  
 .btn-save-city:hover{
-	background-color: #07f746;
+	background-color: #181c2e;
 }
 .city-name{
 	text-align: center;
@@ -207,3 +225,106 @@ form textarea {
     background-color: rebeccapurple;
   }
 
+  code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+	  monospace;
+  }
+  
+  button {
+	background: white;
+	border: 1px solid #3a0775;
+	color: #3a0775;
+	display: block;
+	font-size: 16px;
+	margin-top: 16px;
+	padding: 8px 16px;
+	transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+	background: #3a0775;
+	color: white;
+	cursor: pointer;
+  }
+  
+  .placesAutocomplete {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+  }
+  
+  .placesAutocomplete__inputWrap {
+	padding: 8px;
+  }
+  
+  .placesAutocomplete__hint {
+	display: inline-block;
+	font-size: 12px;
+	margin-top: 4px;
+  }
+  
+  label.label {
+	display: block;
+	margin-bottom: 8px;
+	text-align: center;
+  }
+  
+  input {
+	box-sizing: border-box;
+	display: block;
+	height: 42px;
+	padding: 8px;
+	width: 300px;
+	text-align: center;
+	width: 400px;
+	border-radius: 10px;
+	border: 2px solid transparent;
+  }
+  input:hover{
+	background-color: #eeeeee;
+  }
+  
+  .inputError {
+	background: #ff00002e;
+	border-radius: 20px;
+	display: inline-block;
+	font-size: 14px;
+	margin-left: 4px;
+	padding: 8px;
+  }
+
+  .textarea {
+	background-color: #dddddd;
+	color: #666666;
+	padding: 1em;
+	border-radius: 10px;
+	border: 2px solid transparent;
+	outline: none;
+	font-family: "Heebo", sans-serif;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.4;
+	width: 40%;
+	height: 200px;
+	transition: all 0.2s;
+  } 
+
+  @media screen and (max-width: 600px) {
+	.textarea{
+		width:90%
+	}
+}
+  
+  .textarea:hover {
+	cursor: pointer;
+	background-color: #eeeeee;
+  }
+  
+  .textarea:focus {
+	cursor: text;
+	color: #333333;
+	background-color: white;
+	border-color: #333333;
+  }
+  

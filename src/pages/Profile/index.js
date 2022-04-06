@@ -99,7 +99,7 @@ function Profile() {
 					<FiUser size={25} />
 				</Title>
 
-				<div className="container">
+				<div className="container-profile">
 					<form className="form-profile">
 						<label
 							className="label-avatar

@@ -1,6 +1,17 @@
 .container{
 	display: flex;
-	background-color: #6d7492;;
+	background-color: #e7eaf8;;
+	border-radius: 5px;
+	padding: .8em;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+
+
+.container-profile{
+	display: flex;
+	background-color: #87888b;;
 	border-radius: 5px;
 	padding: .8em;
 	align-items: center;
