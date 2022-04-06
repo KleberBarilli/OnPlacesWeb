@@ -24,6 +24,7 @@ function City() {
 
 	useEffect(() => {
 		loadCity();
+		console.log(city)
 	}, [places]);
 
 	async function loadCity() {

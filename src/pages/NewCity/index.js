@@ -11,7 +11,7 @@ import api from "../../services/api";
 import { AuthContext } from "../../contexts/auth";
 import { toast } from "react-toastify";
 import { useHistory, useParams } from "react-router-dom";
-import { fetchPlace } from "../../services/fetchPlace";
+import { fetchPlace, fetchPlaceInfo } from "../../services/fetchPlace";
 
 function NewCity() {
   const history = useHistory();
@@ -63,12 +63,9 @@ function NewCity() {
   function handleSubmit(e) {
     e.preventDefault();
 
+
     if (
-      name &&
-      valueCountry &&
-      population &&
-      latitude &&
-      longitude &&
+      city &&
       imageCity
     ) {
       if (isEdit) {
@@ -126,20 +123,25 @@ function NewCity() {
     if (!state) {
       setState(" ");
     }
+	const res = await fetchPlaceInfo(city);
+	console.log(res.features[0].geometry.coordinates[0]);
+	console.log(res.features[0].geometry.coordinates[1]);
+
+
     await api
       .post(
         `/city`,
         {
-          name: name,
-          state: state,
-          country: valueCountry.label,
-          population: population,
-          latitude: latitude,
-          longitude: longitude,
-          description: description,
-          tourist_places: tags.toString(),
-          author: user.id,
-        },
+			name: city,
+			state: 'NY',
+			country: 'US',
+			population: 8000,
+			longitude: res.features[0].geometry.coordinates[0],
+			latitude: res.features[0].geometry.coordinates[1],
+			description: description,
+			tourist_places: 'blablabla',
+			author: user.id,
+		  },
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -162,18 +164,22 @@ function NewCity() {
     if (!state) {
       setState(" ");
     }
+		const res = await fetchPlaceInfo(city);
+		console.log(res.features[0].geometry.coordinates[0]);
+		console.log(res.features[0].geometry.coordinates[1]);
+	
     await api
       .put(
         `/city/${id}`,
         {
-          name: name,
-          state: state,
-          country: valueCountry.label,
-          population: population,
-          latitude: latitude,
-          longitude: longitude,
+          name: city,
+          state: 'state',
+          country: 'countru',
+          population: 8000,
+		  longitude: res.features[0].geometry.coordinates[0],
+		  latitude: res.features[0].geometry.coordinates[1],
           description: description,
-          tourist_places: tags,
+          tourist_places: 'blablabla',
           author: user.id,
         },
         {
@@ -212,13 +218,6 @@ function NewCity() {
     }
   }
 
-  const handleChange = (tags) => {
-    setTags(tags);
-  };
-
-  const changeHandler = (value) => {
-    setValueCountry(value);
-  };
 
   return (
     <div>
@@ -257,6 +256,10 @@ function NewCity() {
             *Comece a digitar e escolha a cidade nas opções.
           </span>
 
+		  <button onClick={() => console.log('a')}>
+              TESTAR
+            </button>
+
 
             <label style={{ marginTop: 30,  paddingBottom:10, fontSize:15. }}>Descrição da cidade</label>
             <span className="mini-texto" style={ {paddingBottom:10}}>Fale um pouco sobre a cidade</span>
@@ -290,7 +293,7 @@ function NewCity() {
             </label>
 			
 
-            <button className="btn-save-city" type="submit">
+            <button ClassName="btn-save-city" type="submit">
               Salvar
             </button>
           </form>
