@@ -112,25 +112,29 @@ function Cities() {
 							<tbody>
 								{cities.map((item, index) => {
 									return (
+							
 										<tr key={index}>
+							
 											<td data-label="Cidade">
-												{item.name}
+												<Link style={{textDecoration:'none', color:'#000'}} to={`/city/${item.id}`}>{item.name}</Link>
 											</td>
 											<td data-label="Estado">
-												{item.state}
+											<Link style={{textDecoration:'none', color:'#000'}} to={`/city/${item.id}`}>{item.state}</Link>
 											</td>
 											<td data-label="País">
-												{item.country}
+												<Link style={{textDecoration:'none', color:'#000'}} to={`/city/${item.id}`}>{item.name}</Link>
 											</td>
 											<td data-label="População">
 												{item.population}
 											</td>
 											<td data-label="#">
-												<button
+											
+													<Link
+													to={`/city/${item.id}`}
 													className="action"
 													style={{
 														backgroundColor:
-															'#3583f6',
+															'#0052cc',
 													}}
 												>
 													<FaSearchPlus
@@ -138,7 +142,8 @@ function Cities() {
 														size={17}
 														onClick={()=>handleSearch(item.id)}
 													/>
-												</button>
+														</Link>
+									
 												<Link
 													to={`/newcity/${item.id}`}
 													className="action"
@@ -153,7 +158,9 @@ function Cities() {
 													/>
 												</Link>
 											</td>
+										
 										</tr>
+									
 									);
 								})}
 							</tbody>

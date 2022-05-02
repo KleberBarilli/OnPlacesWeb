@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/auth";
 import "./signin.css";
 import logo from "../../assets/logo2.png";
 import { FaGithub } from "react-icons/fa";
+import StarfieldAnimation from 'react-starfield-animation'
 
 function SignIn() {
   const [email, setEmail] = useState("");
@@ -21,6 +22,7 @@ function SignIn() {
 
   return (
     <div className="container-center">
+      
       <div className="login">
         <h3>OnPlaces App</h3>
 
@@ -44,7 +46,8 @@ function SignIn() {
           <FaGithub size={25} />
         </a>
         <form onSubmit={handleSubmit}>
-          <h1>Entrar</h1>
+          <div className="campos">
+          <h1>Login</h1>
           <input
             type="text"
             placeholder="email@email.com"
@@ -57,6 +60,7 @@ function SignIn() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          </div>
           <button type="submit">
             {loadingAuth ? "Carregando..." : "Acessar"}
           </button>
