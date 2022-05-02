@@ -22,11 +22,20 @@ function SignIn() {
 
   return (
     <div className="container-center">
-      
+        <StarfieldAnimation
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          
+        }}
+      />
       <div className="login">
         <h3>OnPlaces App</h3>
+     
 
         <div className="login-area">
+
           <img src={logo} alt="Logo" />
         </div>
         <a
